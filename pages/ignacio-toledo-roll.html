@@ -8,7 +8,8 @@
 <body class="theme-elden">
   <main class="container">
     <article class="card profile">
-      <header class="profile__header">
+      <!-- Cabecera clickeable -->
+      <header class="profile__header" id="toggleCard">
         <img class="profile__photo" src="../img/ignaciotoledoroll.jpg" alt="Foto de Ignacio Toledo Roll" />
         <div>
           <h1 class="profile__name">Ignacio Toledo Roll</h1>
@@ -16,35 +17,41 @@
         </div>
       </header>
 
-      <section class="profile__section">
-        <h2 class="section__title">Habilidades / Intereses</h2>
-        <ul class="tags">
-          <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>Git</li>
-          <li>Trabajo en equipo</li><li>Resolución de problemas</li><li>Comunicación efectiva</li><li>Adaptabilidad</li>
-        </ul>
-      </section>
-
-      <div class="grid">
+      <!-- Contenido desplegable -->
+      <div class="profile__content">
         <section class="profile__section">
-          <h2 class="section__title">Música Favorita</h2>
-          <ul class="list">
-            <li>Fear — Kendrick Lamar (Canción)</li>
-            <li>Corpiños en la madrugada — Sumo (Álbum)</li>
-            <li>The Alchemist (Artista)</li>
+          <h2 class="section__title">Habilidades / Intereses</h2>
+          <ul class="tags">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>React</li><li>Node.js</li><li>Git</li>
+            <li>Trabajo en equipo</li><li>Resolución de problemas</li><li>Comunicación efectiva</li><li>Adaptabilidad</li>
           </ul>
         </section>
 
-        <section class="profile__section">
-          <h2 class="section__title">Juegos Favoritos</h2>
-          <ul class="list">
-            <li>Elden Ring</li>
-            <li>Inscryption</li>
-            <li>Resident Evil 4</li>
-          </ul>
-        </section>
+        <div class="grid">
+          <section class="profile__section">
+            <h2 class="section__title">Música Favorita</h2>
+            <ul class="list">
+              <li>Fear — Kendrick Lamar (Canción)</li>
+              <li>Corpiños en la madrugada — Sumo (Álbum)</li>
+              <li>The Alchemist (Artista)</li>
+            </ul>
+          </section>
+
+          <section class="profile__section">
+            <h2 class="section__title">Juegos Favoritos</h2>
+            <ul class="list">
+              <li>Elden Ring</li>
+              <li>Inscryption</li>
+              <li>Resident Evil 4</li>
+            </ul>
+          </section>
+        </div>
       </div>
     </article>
     <a href="../index.html">← Atrás</a>
   </main>
+
+  <!-- Script de la animación -->
+  <script src="../js/ignacio-toledo-roll.js"></script>
 </body>
 </html>

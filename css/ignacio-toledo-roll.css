@@ -281,6 +281,20 @@ body.theme-elden {
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
+/* ====== Animación de despliegue ====== */
+.profile__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.profile__content.is-open {
+  max-height: 1000px; /* valor suficientemente alto para expandir */
+}
+
+.profile__header {
+  cursor: pointer; /* muestra que se puede clickear */
+}
 
 /* Responsive */
 @media (max-width: 720px){
