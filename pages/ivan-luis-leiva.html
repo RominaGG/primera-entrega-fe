@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ivan Luis Leiva - Landing Page</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/ivan-luis-leiva.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero__media">
+      <img src="../img/ivan-hero-bg.jpg" alt="Fondo tecnológico">
+    </div>
+    <div class="hero__overlay"></div>
+
+    <div class="container hero__content stack">
+      <span class="hero__kicker">Desarrollador Frontend</span>
+      <h1>Ivan Luis Leiva</h1>
+      <p class="lead" id="sobre-mi-p">
+        Apasionado por crear experiencias excepcionales. Entusiasta de la tecnologia y el desarrollo moderno con tecnologías como React, JavaScript y CSS.
+      </p>
+      <div class="hero__actions">
+        <a href="#proyectos" class="btn btn--accent">Ver Proyectos</a>
+        <a href="#contacto" class="btn btn--outline">Contactar</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOBRE MÍ SECTION -->
+  <section class="section" id="sobre-mi">
+    <div class="container split split--2">
+      <article class="panel">
+        <div class="cluster">
+          <div class="badge"></div>
+          <h2>Sobre Mí</h2>
+        </div>
+        <p>
+          Soy un desarrollador frontend apasionado por la tecnología y el diseño web. Me especializo en crear interfaces de usuario intuitivas y atractivas que brindan experiencias excepcionales a los usuarios.
+        </p>
+        <p>
+          Mi enfoque se centra en escribir código limpio, mantenible y escalable, utilizando las mejores prácticas de desarrollo web moderno.
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__number">2+</span>
+            <span class="stat__label">Años de experiencia</span>
+          </div>
+          <div class="stat">
+            <span class="stat__number">15+</span>
+            <span class="stat__label">Proyectos completados</span>
+          </div>
+        </div>
+      </article>
+
+      <figure class="media">
+        <img src="../img/ivan-profile.jpg" alt="Ivan Luis Leiva">
+      </figure>
+    </div>
+  </section>
+
+  <!-- HABILIDADES SECTION -->
+  <section class="section section--dark" id="habilidades">
+    <div class="container">
+      <div class="section__header">
+        <div class="cluster">
+          <div class="badge"></div>
+          <h2>Habilidades Técnicas</h2>
+        </div>
+        <p class="lead">Tecnologías y herramientas que domino</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-card__icon">💻</div>
+          <h3>Frontend</h3>
+          <ul class="skill-list">
+            <li>HTML5 & CSS3</li>
+            <li>JavaScript (ES6+)</li>
+            <li>React.js</li>
+            <li>Vue.js</li>
+            <li>TypeScript</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">🎨</div>
+          <h3>Diseño</h3>
+          <ul class="skill-list">
+            <li>UI/UX Design</li>
+            <li>Figma</li>
+            <li>Responsive Design</li>
+            <li>CSS Grid & Flexbox</li>
+          </ul>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card__icon">⚙️</div>
+          <h3>Herramientas</h3>
+          <ul class="skill-list">
+            <li>Git & GitHub</li>
+            <li>Webpack</li>
+            <li>Node.js</li>
+            <li>VS Code</li>
+            <li>Android Studio</li>
+            <li>Visual Studio Community</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROYECTOS SECTION -->
+  <section class="section" id="proyectos">
+    <div class="container">
+      <div class="section__header">
+        <div class="cluster">
+          <div class="badge"></div>
+          <h2>Proyectos Destacados</h2>
+        </div>
+        <p class="lead">Algunos de los proyectos en los que trabajé recientemente</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-card__image">
+            <img src="../img/og-image.jpeg" alt="Portfolio Web Ivan Leiva">
+          </div>
+          <div class="project-card__content">
+            <h3>Portfolio Web Personal</h3>
+            <p>Mi portfolio profesional desarrollado en React, con animaciones, integración de email y diseño responsive. Incluye sección de proyectos, contacto y blog técnico.</p>
+            <div class="project-card__tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">CSS3</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="https://www.illeivadev.com.ar" class="btn btn--accent btn--small" target="_blank">Ver Sitio</a>
+              <a href="https://github.com/illeiva2/portfolio" class="btn btn--outline btn--small" target="_blank">Código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__image">
+            <img src="../img/portfolio-01.jpg" alt="Club Deportivo">
+          </div>
+          <div class="project-card__content">
+            <h3>Gestión de Turnos</h3>
+            <p>Ssitema de gestión de Club Deportivo, con panel de administración, menú de pagos y control de agenda.</p>
+            <div class="project-card__tech">
+              <span class="tech-tag">Android Studio</span>
+              <span class="tech-tag">Kotlin</span>
+              <span class="tech-tag">XML</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#" class="btn btn--accent btn--small" target="_blank">Ver Demo</a>
+              <a href="https://github.com/illeiva2/ProyectoIntegradorDAM" class="btn btn--outline btn--small" target="_blank">Código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card__image">
+            <img src="../img/portfolio-08.jpg" alt="Blog Técnico">
+          </div>
+          <div class="project-card__content">
+            <h3>Blog Técnico</h3>
+            <p>Blog personal donde comparto artículos sobre desarrollo web, buenas prácticas y tutoriales de tecnologías modernas.</p>
+            <div class="project-card__tech">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">Markdown</span>
+              <span class="tech-tag">Vercel</span>
+            </div>
+            <div class="project-card__actions">
+              <a href="#" class="btn btn--accent btn--small" target="_blank">Ver Blog</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO SECTION -->
+  <section class="section section--dark" id="contacto">
+    <div class="container">
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="cluster">
+            <div class="badge"></div>
+            <h2>¿Trabajamos juntos?</h2>
+          </div>
+          <p class="lead">
+            Estoy siempre interesado en nuevos proyectos y oportunidades. ¡Hablemos sobre cómo puedo ayudarte a hacer realidad tu idea!
+          </p>
+          
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-method__icon">📧</div>
+              <div>
+                <h4>Email</h4>
+                <p>illeiva@outlook.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-method__icon">💼</div>
+              <div>
+                <h4>LinkedIn</h4>
+                <p>linkedin.com/in/illeiva</p>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-method__icon">🐙</div>
+              <div>
+                <h4>GitHub</h4>
+                <p>github.com/iilleiva2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form class="form">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn--accent btn--full">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Ivan Luis Leiva. Todos los derechos reservados.</p>
+        <div class="footer-links">
+          <a href="#sobre-mi">Sobre Mí</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/ivan-luis-leiva.js"></script>
+</body>
+</html>
