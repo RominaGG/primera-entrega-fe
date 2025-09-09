@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura Vivan - Portfolio</title>
+    <link rel="stylesheet" href="../css/laura-vivan.css">>
+</head>
+<body>
+    <!-- Contenedor principal del portafolio -->
+    <div class="portfolio-container">
+        
+        <!-- COLUMNA IZQUIERDA -->
+        <div class="left-column">
+            <!-- Elementos decorativos superiores -->
+            <div class="decorative-elements">
+                <!-- Cuadrado rojo decorativo -->
+                <div class="red-square" onclick="handleClick('red-square')"></div>
+                <!-- Cuadrado gris decorativo -->
+                <div class="gray-square" onclick="handleClick('gray-square')"></div>
+            </div>
+            
+            <!-- Logo geométrico principal -->
+            <div class="geometric-logo" onclick="handleClick('logo')"></div>
+            
+            <!-- Título del portafolio -->
+            <div class="portfolio-title">
+                LAURA VIVAN<br>
+                Frontend 
+                Developer
+            </div>
+        </div>
+
+        <!-- COLUMNA CENTRAL -->
+        <div class="center-column">
+            <!-- Sección de información del proyecto (azul) -->
+            <div class="project-info" onclick="handleClick('project-info')">
+                <h3>MAIN IDEA</h3>
+                <p>Espacio para descripción del proyecto principal</p>
+            </div>
+            
+            <!-- Proyecto principal (negro) -->
+            <div class="main-project" onclick="handleClick('main-project')">
+                <h1>Do It Now</h1>
+                <p>Descripción del proyecto principal</p>
+                
+                <!-- Imágenes pequeñas dentro del proyecto -->
+                <div class="project-images">
+                    <div class="small-image ocean" onclick="handleClick('ocean-image'); event.stopPropagation();"></div>
+                    <div class="small-image mountain" onclick="handleClick('mountain-image'); event.stopPropagation();"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA -->
+        <div class="right-column">
+            <!-- Imagen de la torre -->
+            <div class="tower-image" onclick="handleClick('tower-image')"></div>
+            
+            <!-- Portrait colorido -->
+            <div class="colorful-portrait" onclick="handleClick('colorful-portrait')"></div>
+            
+            <!-- Sección de agencia creativa -->
+            <div class="agency-section" onclick="handleClick('agency-section')">
+                <h4>Panel Gris</h4>
+                <div style="background: #f0f0f0; height: 60px; border-radius: 4px;"></div>
+            </div>
+            
+            <div class="color-cards">
+            <div class="color-card linkedin" onclick="handleClick('linkedin')">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+            </div>
+            <div class="color-card mail" onclick="handleClick('mail')">
+                <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mail-dot-ru.svg" alt="Mail" />
+            </div>
+                <div class="color-card info-toggle">
+                    <a href="https://github.com/Lauce" target="_blank">
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+                    </a>
+                </div>
+                <div class="info-extra">
+                    <p>Este es mi perfil de GitHub. ¡Visitame!</p>
+                </div>
+        </div>
+
+            
+        </div>
+    </div>
+
+    <script src="../js/laura-vivan.js"></script>
+</body>
+</html>

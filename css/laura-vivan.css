@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* Contenedor principal del portafolio */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr; /* 3 columnas principales */
+    gap: 20px;
+    min-height: 80vh;
+}
+
+/* Columna izquierda */
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Elementos decorativos superiores */
+.decorative-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Cuadrados decorativos rojos y grises */
+.red-square {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #cc0000, #ff3333);
+    transform: rotate(45deg);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.red-square:hover {
+    transform: rotate(45deg) scale(1.1);
+}
+
+.gray-square {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #666, #999);
+    transform: rotate(15deg);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.gray-square:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.geometric-logo {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #333;           /* marco negro */
+    border-radius: 0;                 /* cuadrado */
+    background-color: #fff;           /* fondo blanco */
+    background-image: url('../img/cuadrado.jpg'); /* ruta ajustada */
+    background-size: cover;           /* la imagen ocupa todo */
+    background-position: center;      /* centrada */
+    background-repeat: no-repeat;     /* evita repetición */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin: 20px 0;
+}
+
+.geometric-logo:hover {
+    transform: scale(1.05);
+}
+
+.geometric-logo::before {
+    top: 20px;
+    left: 20px;
+}
+
+.geometric-logo::after {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Título del portafolio */
+.portfolio-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    letter-spacing: 2px;
+    margin-top: 40px;
+}
+
+/* Columna central - Proyecto principal */
+.center-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Sección superior azul (info del proyecto) */
+.project-info {
+    background: linear-gradient(135deg, #87CEEB, #4682B4);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-info:hover {
+    transform: translateY(-5px);
+}
+
+.project-info h3 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* Sección principal negra */
+.main-project {
+    background: linear-gradient(135deg, #1a1a1a, #000);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-project:hover {
+    transform: translateY(-5px);
+}
+
+.main-project h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.main-project p {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+/* Imágenes pequeñas en el proyecto principal */
+.project-images {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.small-image {
+    width: 120px;
+    height: 80px;
+    background: linear-gradient(45deg, #4682B4, #87CEEB);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.small-image:hover {
+    transform: scale(1.05);
+}
+
+.small-image.ocean {
+    background: linear-gradient(45deg, #006994, #4682B4);
+}
+
+.small-image.mountain {
+    background: linear-gradient(45deg, #ddd, #f0f0f0);
+}
+
+/* Columna derecha */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Imagen de torre */
+.tower-image {
+    background: linear-gradient(45deg, #ccc, #fff);
+    height: 120px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.tower-image:hover {
+    transform: scale(1.02);
+}
+
+/* Imagen colorida (portrait) */
+.colorful-portrait {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    height: 160px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.colorful-portrait:hover {
+    transform: scale(1.02);
+}
+
+/* Sección de agencia */
+.agency-section {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+    height: 140px;
+}
+
+.agency-section:hover {
+    transform: scale(1.02);
+}
+
+.agency-section h4 {
+    color: #666;
+    font-size: 12px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Tarjetas de colores e iconos */
+.color-cards {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.color-card {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.color-card:hover {
+    transform: translateY(-5px);
+}
+
+.color-card img {
+    width: 24px;
+    height: 24px;
+    filter: invert(0.5);
+}
+
+.color-card.linkedin {
+    background: linear-gradient(135deg, #0077b5, #005582);
+}
+
+.color-card.linkedin img {
+    filter: invert(1);
+}
+
+.color-card.mail {
+    background: linear-gradient(135deg, #ea4335, #d33b2c);
+}
+
+.color-card.mail img {
+    filter: invert(1);
+}
+
+.color-card.info-toggle {
+    background: linear-gradient(135deg, #333, #000);
+}
+
+.color-card.info-toggle img {
+    filter: invert(1);
+}
+
+.color-card.info-toggle a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.info-extra {
+    display: none;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+.color-card.purple {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.color-card.red {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.color-card.blue {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .main-project h1 {
+        font-size: 36px;
+    }
+    
+    .project-images {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .color-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
