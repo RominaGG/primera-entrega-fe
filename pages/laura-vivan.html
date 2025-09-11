@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/laura-vivan.css">
 </head>
+
 <body>
     <!-- Navegación obligatoria -->
     <nav class="nav-menu">
         <a href="../index.html">
-        <svg width="24" height="24" viewBox="0 0 24 24" style="vertical-align: middle;">
-            <path d="M15 18l-6-6 6-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" style="vertical-align: middle;">
+                <path d="M15 18l-6-6 6-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
         </a>
 
         <!--<a href="../bitacora.html">Bitácora</a> -->
@@ -21,23 +24,23 @@
 
     <!-- Contenedor principal -->
     <div class="portfolio-container">
-        
+
         <!-- COLUMNA IZQUIERDA Cuadrados rojo y gris -->
         <div class="left-column">
             <div class="decorative-elements">
                 <div class="red-square" onclick="handleClick('red-square')"></div>
                 <div class="gray-square" onclick="handleClick('gray-square')"></div>
             </div>
-            
+
             <div class="geometric-logo" onclick="handleClick('logo')"></div>
-            
-        <div class="portfolio-title">
-            <span class="portfolio-name">LAURA VIVAN</span>
-            <span class="portfolio-role">
-                Front-End<br>
-                Practitioner
-            </span>
-        </div>
+
+            <div class="portfolio-title">
+                <span class="portfolio-name">LAURA VIVAN</span>
+                <span class="portfolio-role">
+                    Front-End<br>
+                    Practitioner
+                </span>
+            </div>
         </div>
 
         <!-- COLUMNA CENTRAL -->
@@ -59,10 +62,9 @@
                     <a href="https://www.youtube.com/watch?v=BBctYyLJa10" target="_blank" rel="noopener">
                         <img src="../img/Elis&Tom_disco3.jpg" alt="Elis&Tom" />
                     </a>
-                    <a href="https://www.youtube.com/watch?v=Fxu5wNVBkOU"
-                        target="_blank" rel="noopener">
+                    <a href="https://www.youtube.com/watch?v=Fxu5wNVBkOU" target="_blank" rel="noopener">
                         <img src="../img/infame_disco4.jpg" alt="Infame Cover" /></a>
-        
+
                 </div>
             </div>
             <div class="main-project" onclick="handleClick('main-project')">
@@ -71,7 +73,8 @@
                         <div class="movies-section">
                             <h2>Películas favoritas</h2>
                             <div class="movies-list">
-                                <div class="movie-card" onclick="showMovieModal('../img/Fitzcarraldo.jpg', 'Fitzcarraldo')">
+                                <div class="movie-card"
+                                    onclick="showMovieModal('../img/Fitzcarraldo.jpg', 'Fitzcarraldo')">
                                     <img src="../img/Fitzcarraldo.jpg" alt="Fitzcarraldo" />
                                     <span>Fitzcarraldo</span>
                                 </div>
@@ -83,7 +86,7 @@
                                 <div class="movie-card"
                                     onclick="showMovieModal('../img/synecdoche,-new-york-poster.jpg', 'synecdoche')">
                                     <img src="../img/synecdoche,-new-york-poster.jpg" alt="synecdoche" />
-                                    <span>synecdoche NY</span>
+                                    <span>Synecdoche NY</span>
                                 </div>
                             </div>
                         </div>
@@ -95,8 +98,8 @@
         <!-- COLUMNA DERECHA -->
         <div class="right-column">
             <div class="tower-image" onclick="handleClick('tower-image')"></div>
-            
-                        
+
+
             <!--------- Panel Gris con enlace a la bitácora ---------->
             <div class="agency-section" onclick="alert('En construcción 🚧');">
                 <div class="bitacora-panel">
@@ -109,17 +112,19 @@
                 </div>
             </div>---->
 
-            
+
             <div class="color-cards">
                 <div class="color-card linkedin" onclick="handleClick('linkedin')">
-                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+                    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg"
+                        alt="LinkedIn" />
                 </div>
                 <div class="color-card mail" onclick="handleClick('mail')">
                     <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/mail-dot-ru.svg" alt="Mail" />
                 </div>
                 <div class="color-card info-toggle">
                     <a href="https://github.com/Lauce" target="_blank">
-                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+                        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
+                            alt="GitHub" />
                     </a>
                 </div>
                 <div class="info-extra">
@@ -137,8 +142,8 @@
                 <img src="../img/cuadrado.jpg" alt="Laura Vivan" class="profile-photo" />
                 <h2>Laura Vivan</h2>
                 <p><strong>Buenos Aires, Argentina</strong></p>
-                                    
-               <h3>Habilidades</h3>
+
+                <h3>Habilidades</h3>
                 <ul>
                     <li>Transformar ideas en proyectos reales</li>
                     <li>Adaptabilidad a distintos lenguajes y entornos</li>
@@ -150,14 +155,16 @@
             </div>
         </div>
     </div>
-    
+
     <div id="movieModal" class="modal" style="display:none;">
-    <div class="modal-content">
-        <span class="close" onclick="closeMovieModal()">&times;</span>
-        <img id="modalMovieImg" src="" alt="" style="width: 300px; border-radius: 8px; display: block; margin: 0 auto 16px auto;" />
-        <h2 id="modalMovieTitle" style="text-align: center;"></h2>
-    </div>
+        <div class="modal-content">
+            <span class="close" onclick="closeMovieModal()">&times;</span>
+            <img id="modalMovieImg" src="" alt=""
+                style="width: 300px; border-radius: 8px; display: block; margin: 0 auto 16px auto;" />
+            <h2 id="modalMovieTitle" style="text-align: center;"></h2>
+        </div>
     </div>
     <script src="../js/laura-vivan.js"></script>
 </body>
+
 </html>

@@ -7,8 +7,10 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: #f5f5f5;
-    padding: 50px 20px 20px 20px; /* top, right, bottom, left */
+    padding: 50px 20px 20px 20px;
+    /* top, right, bottom, left */
 }
+
 /* -------------Navegación volver-------------------- */
 .nav-menu {
     position: fixed;
@@ -24,7 +26,7 @@ body {
 .nav-menu a {
     text-decoration: none;
     color: #f6f6f6;
-    padding: 8px 12px; 
+    padding: 8px 12px;
     border-radius: 0px;
     /* transition: transform 0.2s ease, background 0.2s ease; */
     transition: all 0.2s ease;
@@ -39,7 +41,7 @@ body {
     background-color: rgba(60, 60, 60, 0.3);
 }
 
-/* Efecto al presionar - ahora funciona */
+
 .nav-menu a:active {
     background-color: #3c3c3c;
     transform: scale(0.95);
@@ -51,11 +53,11 @@ body {
 
 /*----------------- Contenedor principal del portafolio------------ */
 .portfolio-container {
-   
+
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 0.7fr 2.2fr 0.7fr; 
+    grid-template-columns: 0.7fr 2.2fr 0.7fr;
     gap: 20px;
     min-height: 80vh;
     align-items: start;
@@ -106,13 +108,19 @@ body {
 .geometric-logo {
     width: 150px;
     height: 150px;
-    border: 4px solid #333;           /* marco negro */
-    border-radius: 0;                 /* cuadrado */
-    background-color: #fff;           /* fondo blanco */
-    background-image: url('../img/cuadrado.jpg'); 
-    background-size: cover;           /* la imagen ocupa todo */
-    background-position: center;      /* centrada */
-    background-repeat: no-repeat;     /* evita repetición */
+    border: 4px solid #333;
+    /* marco negro */
+    border-radius: 0;
+    /* cuadrado */
+    background-color: #fff;
+    /* fondo blanco */
+    background-image: url('../img/cuadrado.jpg');
+    background-size: cover;
+    /* la imagen ocupa todo */
+    background-position: center;
+    /* centrada */
+    background-repeat: no-repeat;
+    /* evita repetición */
     cursor: pointer;
     transition: transform 0.3s ease;
     margin: 20px 0;
@@ -133,7 +141,8 @@ body {
     font-weight: bold;
     color: #333;
     letter-spacing: 2px;
-    margin-bottom: 18px; /* separa del rol */
+    margin-bottom: 18px;
+    /* separa del rol */
 }
 
 .portfolio-role {
@@ -162,7 +171,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .project-info.shrink {
@@ -197,7 +206,7 @@ body {
     margin: 0 0 0 0;
     background: #f9f9f9;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: all 0.4s;
     max-height: 0;
     opacity: 0;
@@ -225,7 +234,7 @@ body {
     height: 100px;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 
@@ -239,7 +248,7 @@ body {
     transition: transform 0.3s ease;
     text-align: center;
     margin-top: 32px;
-    
+
 }
 
 .main-project:hover {
@@ -257,6 +266,7 @@ body {
     opacity: 0.7;
     margin-bottom: 20px;
 }
+
 .movies-section {
     margin-top: 32px;
     text-align: center;
@@ -274,7 +284,7 @@ body {
     border-radius: 2px;
     padding: 12px;
     width: 120px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,8 +313,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Alinea arriba */
-    gap: 16px; /* Espacio entre paneles */
+    justify-content: flex-start;
+    /* Alinea arriba */
+    gap: 16px;
+    /* Espacio entre paneles */
     align-self: start;
     margin-top: 60px;
 }
@@ -319,7 +331,7 @@ body {
     border-radius: 16px;
     padding: 16px 0;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     cursor: pointer;
     letter-spacing: 1px;
     min-width: 160px;
@@ -334,9 +346,10 @@ body {
     border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: background 0.2s, color 0.2s;
 }
+
 .bitacora-link:hover {
     background: linear-gradient(135deg, #34507b, #5072a4);
     color: #ffd700;
@@ -407,7 +420,8 @@ body {
 
 .modal {
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     display: none;
@@ -415,7 +429,7 @@ body {
     align-items: center;
     z-index: 1000;
     backdrop-filter: blur(8px);
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .modal.show {
@@ -423,19 +437,23 @@ body {
 }
 
 .modal-content {
-    background: #b5b8bc; /* Cambia el color de fondo */
+    background: #b5b8bc;
+    /* Cambia el color de fondo */
     border-radius: 5px;
     padding: 40px 32px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-    min-width: 300px;    /* Más ancho */
-    max-width: 400px;    /* Máximo ancho */
-    width: 80vw;         /* Responsive */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    min-width: 300px;
+    /* Más ancho */
+    max-width: 400px;
+    /* Máximo ancho */
+    width: 80vw;
+    /* Responsive */
     position: relative;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-        
+
 }
 
 
@@ -446,6 +464,7 @@ body {
     font-size: 2em;
     cursor: pointer;
 }
+
 /* Modal para información personal */
 
 .info-extra {
@@ -457,6 +476,7 @@ body {
     font-size: 12px;
     color: #333;
 }
+
 .info-panel {
     margin-bottom: 20px;
 }
@@ -518,7 +538,7 @@ body {
     .portfolio-container {
         max-width: 1000px;
     }
-    
+
     .main-project h1 {
         font-size: 42px;
     }
@@ -529,16 +549,16 @@ body {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .main-project h1 {
         font-size: 36px;
     }
-    
+
     .project-images {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .color-cards {
         flex-direction: column;
         align-items: center;
@@ -550,7 +570,7 @@ body {
         grid-template-columns: 1fr;
         gap: 10px;
     }
-    
+
     body {
         padding: 10px;
     }
@@ -558,16 +578,16 @@ body {
     .main-project h1 {
         font-size: 28px;
     }
-    
+
     .project-images {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .color-cards {
         flex-direction: column;
         align-items: center;
     }
 
-    
+
 }
