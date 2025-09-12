@@ -1,6 +1,6 @@
 // Función para manejar los clicks en cada sección
 function handleClick(section) {
-    switch(section) {
+    switch (section) {
         case 'logo':
             showProfileModal();
             break;
@@ -19,9 +19,9 @@ function handleClick(section) {
         case 'agency-section':
             alert('En construcción 🚧');
             break;
-        // Si querés agregar más lógica para otros elementos, hacelo acá
+
         default:
-            // No hacer nada
+
             break;
     }
 }
@@ -53,7 +53,7 @@ function closeMovieModal() {
 }
 
 // Efectos adicionales con JavaScript
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Efecto de carga suave
     const elements = document.querySelectorAll('.portfolio-container > *');
     elements.forEach((el, index) => {
