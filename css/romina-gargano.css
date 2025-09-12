@@ -1,0 +1,360 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body,p,a {
+  font-weight: 400;
+  font-family: Exo 2, sans-serif;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode .card {
+  background: #1f1f1f;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* H2, H3, párrafos y otros textos */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode li {
+  color: #f5f5f5;
+}
+
+h1,h2,h3 {
+  font-family: Exo 2, sans-serif;
+  font-weight: 700;
+}
+body {
+  background-color: #121212;
+  color: #f1f1f1;
+  line-height: 1.6;
+}
+/* Nav*/
+header {
+  background-color: #1f1f1f;
+  padding: 1 rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem; /* margen interno */
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #f1f1f1;
+  margin-left: 0;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff9800;
+}
+
+/* Hero Section */
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4 rem 2rem;
+}
+
+.hero-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #ff9800;
+}
+
+#hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+/* Secciones */
+section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ff9800;
+}
+
+/* Seccion Habilidades */
+.about {
+  padding: 60px 20px;
+  background-color:linear-gradient(135deg, #f9f9f9, #e0e0e0);
+  color: #333;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #111;
+}
+.about-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.foto {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+  /*opacity: 0.9;*/
+  border: 4px groove rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* circulo de fondo con blureo*/
+.foto::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+.foto:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.info {
+  max-width: 500px;
+  text-align: left;
+}
+
+.info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  
+}
+.info p {
+  margin: 5px 0;
+  color: #444;
+}
+/* Habilidades como insignias */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill {
+  background: #ff9800;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.skill:hover {
+  transform: scale(1.1);
+  background: #de5252;
+}
+/* Cards container */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  background: #1f1f1f;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+.card p {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  padding: 0.8rem;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.overlay a {
+    background: #ff9800;
+    color: #121212;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold
+}
+.card:hover .overlay {
+  opacity: 1;
+}
+/* Contact links */
+#contact {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.contact-links a {
+    font-size: 2rem;
+    color: #ff9800;
+    transition: transform 0.3s, color 0.3s;
+}
+.contact-links a:hover {
+    color: #e68900;
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+  background: #1f1f1f;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+/* botones flotantes */
+
+.btn-flotante {
+  position: fixed;
+  right: 20px;
+  background: rgba(243, 231, 172, 0.7);
+  backdrop-filter: blur(5px);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.2s, opacity 0.3s;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.btn-flotante:hover {
+  background: rgba(230, 192, 81, 0.9);
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+#btnUp {
+  bottom: 20px;
+  display: none;
+}
+
+#btnHome {
+  bottom: 80px;
+}
+
+#btnDarkMode {
+  bottom: 140px; /* arriba del home y subir */
+  right: 20px;
+}
+
+#btnDarkMode svg {
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: auto;
+}
+
+.btn-flotante svg {
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin: auto;
+}
+
+
