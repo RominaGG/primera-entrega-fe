@@ -1,13 +1,14 @@
-/* ========= Tema Elden/Dark Wiki ========= */
 :root{
-  --bg: #0b0f14;            /* fondo principal muy oscuro */
-  --bg-panel: #121518;      /* paneles */
-  --ink: #e6e6e6;           /* texto principal */
-  --muted: #9aa0a6;         /* texto secundario */
-  --gold: #c8a15b;          /* dorado */
-  --gold-2: #b48a45;        /* dorado más oscuro */
+  --bg: #0b0f14;
+  --bg-panel: #121518;
+  --ink: #e6e6e6;
+  --muted: #9aa0a6;
+  --gold: #c8a15b;
+  --gold-2: #b48a45;
   --link: #d7b675;
   --danger: #b24c3d;
+  --glass: rgba(255,255,255,0.04);
+  --glass-2: rgba(200,161,91,0.06);
 
   --radius: 8px;
   --shadow: 0 8px 24px rgba(0,0,0,.5);
@@ -28,7 +29,22 @@ body{
   line-height: 1.6;
 }
 
-/* ====== Tipografía ====== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes staggerScale {
+  from { opacity: 0; transform: scale(.96) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+  50% { box-shadow: 0 12px 36px rgba(200,161,91,0.08); }
+  100% { box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+}
+
 h1, h2, h3 {
   margin: 0 0 .75rem;
   line-height: 1.1;
@@ -44,7 +60,6 @@ p { margin: 0 0 1rem; color: var(--muted); }
 a { color: var(--link); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-/* ====== Layout ====== */
 .container{
   width: min(100%, var(--max-w));
   margin: 0 auto;
@@ -52,11 +67,12 @@ a:hover { text-decoration: underline; }
 }
 
 .panel{
-  background: linear-gradient(#14181d, #0f1418);
-  border: 1px solid #1f252b;
-  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(18,21,24,0.9), rgba(15,20,24,0.85));
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: calc(var(--radius) + 2px);
   box-shadow: var(--shadow);
   padding: 1.25rem;
+  backdrop-filter: blur(6px);
 }
 
 /* ====== Líneas doradas tipo wiki ====== */
@@ -166,8 +182,10 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
   border-radius: var(--radius);
   border: 1px solid #242a30;
-  background: #0e1418;
+  background: linear-gradient(180deg, rgba(14,20,24,0.92), rgba(10,14,16,0.95));
   box-shadow: var(--shadow);
+  transform-origin: center top;
+  animation: fadeInUp .6s var(--easing, cubic-bezier(.2,.8,.2,1));
 }
 .card__media{
   aspect-ratio: 16/9;
@@ -185,8 +203,9 @@ a:hover { text-decoration: underline; }
 }
 .card__meta{ color: var(--muted); font-size: .9rem; }
 .card:hover{
-  border-color: var(--gold-2);
-  box-shadow: 0 0 0 1px rgba(200,161,91,.35) inset, var(--shadow);
+  border-color: rgba(200,161,91,0.24);
+  animation: glowPulse 3.6s infinite ease-in-out;
+  box-shadow: 0 0 0 2px rgba(200,161,91,0.04) inset, var(--shadow);
 }
 
 /* ====== Aside / columnas ====== */
@@ -246,12 +265,35 @@ body.theme-elden {
   padding: clamp(1.2rem, 2vw, 2rem);
 }
 
+/* Contenedor que controla la secuencia de reveal */
+.reveal-sequence > *{
+  opacity: 0;
+  transform: translateY(10px);
+}
+.reveal-sequence.is-ready > *{
+  animation: staggerScale .5s cubic-bezier(.2,.9,.2,1) both;
+}
+.reveal-sequence.is-ready > *:nth-child(1){ animation-delay: .06s; }
+.reveal-sequence.is-ready > *:nth-child(2){ animation-delay: .12s; }
+.reveal-sequence.is-ready > *:nth-child(3){ animation-delay: .18s; }
+.reveal-sequence.is-ready > *:nth-child(4){ animation-delay: .24s; }
+.reveal-sequence.is-ready > *:nth-child(5){ animation-delay: .30s; }
+
+/* Parallax para la foto de perfil */
+.profile__photo{ will-change: transform; transition: transform .25s ease-out; }
+.profile__photo.parallax{ transform: translate3d(0,-6px,0) scale(1.02); }
+
+/* Tag hover effect enhanced */
+.tags li{ transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s ease, background .2s ease; }
+.tags li:hover{ transform: translateY(-6px) scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.45); background: rgba(200,161,91,0.08); }
+
 /* Header en 2 columnas y foto SIEMPRE chica */
 .profile__header{
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 1rem;
   align-items: center;
+  padding-bottom: .35rem;
 }
 
 /* 🔒 La foto NO puede crecer más de 120px y recorta al centro */
@@ -265,6 +307,7 @@ body.theme-elden {
   border-radius: 50%;
   border: 3px solid var(--gold);
   display: block;
+  transition: transform .35s cubic-bezier(.2,.9,.22,1), box-shadow .35s ease;
 }
 
 /* Si hubiera estilos globales que ponen las imágenes al 100%,
@@ -285,16 +328,51 @@ body.theme-elden {
 .profile__content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 0.45s cubic-bezier(.2,.9,.22,1), opacity .35s ease;
+  opacity: 0;
 }
 
 .profile__content.is-open {
-  max-height: 1000px; /* valor suficientemente alto para expandir */
+  max-height: 1200px; /* valor suficientemente alto para expandir */
+  opacity: 1;
 }
 
 .profile__header {
   cursor: pointer; /* muestra que se puede clickear */
 }
+
+.profile__header:hover .profile__photo{
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.profile__name{ animation: fadeInUp .5s both; }
+.section__title{ color: var(--gold); font-weight:700; }
+
+.tags li{ display:inline-block; margin:.25rem .35rem; padding:.28rem .6rem; background:var(--glass); border-radius:999px; color:var(--ink); border:1px solid var(--glass-2); font-size:.9rem; }
+
+.list li{ margin:.35rem 0; color:var(--muted); }
+
+.container{ animation: fadeInUp .5s .05s both; }
+
+/* Estilos para el botón Atrás */
+.back-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem .7rem;
+  border-radius: 8px;
+  color: var(--ink);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.03);
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s ease, background .2s ease;
+}
+.back-btn:hover{ transform: translateX(-6px) scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.45); background: linear-gradient(180deg, rgba(215,182,117,0.06), rgba(255,255,255,0.01)); }
+.back-btn .arrow{ display:inline-block; transition: transform .28s cubic-bezier(.2,.9,.2,1); }
+.back-btn:hover .arrow{ transform: translateX(-4px) rotate(-6deg); }
+
+/* pequeño pulso dorado al cargar para llamar la atención */
+.back-btn.pulse{ animation: glowPulse 2.4s ease-in-out .4s 1; }
 
 /* Responsive */
 @media (max-width: 720px){

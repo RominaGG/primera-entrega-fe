@@ -1,4 +1,3 @@
-/* ========= Reset mínimo y base ========= */
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -9,18 +8,17 @@ body {
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.6;
-  color: #0f172a;               /* casi negro azulado */
-  background: #fbf6ef;          /* crema */
+  color: #0f172a;
+  background: #fbf6ef;
 }
 
-/* ========= Variables de diseño ========= */
 :root{
-  --bg: #fbf6ef;                /* crema */
-  --ink: #0f172a;               /* texto principal */
-  --muted: #6b7280;             /* texto secundario */
-  --panel: #111827;             /* panel oscuro */
+  --bg: #fbf6ef;
+  --ink: #0f172a;
+  --muted: #6b7280;
+  --panel: #111827;
   --panel-80: rgba(17,24,39,.8);
-  --accent: #ff542d;            /* naranja */
+  --accent: #ff542d;
   --white: #fff;
 
   --max-w: 1200px;
@@ -33,14 +31,12 @@ body {
   --radius-lg: 18px;
 }
 
-/* Contenedor */
 .container {
   width: min(100%, var(--max-w));
   margin-inline: auto;
   padding-inline: var(--space-2);
 }
 
-/* Tipografía */
 h1, h2, h3 {
   line-height: 1.1;
   margin: 0 0 var(--space-3);
@@ -50,7 +46,6 @@ h1 { font-size: clamp(2.6rem, 4vw + 1rem, 5rem); }
 h2 { font-size: clamp(1.8rem, 1.2vw + 1.2rem, 2.6rem); }
 .lead { color: var(--muted); max-width: 65ch; }
 
-/* Botones */
 .btn {
   display: inline-block;
   padding: .7rem 1.1rem;
@@ -68,15 +63,12 @@ h2 { font-size: clamp(1.8rem, 1.2vw + 1.2rem, 2.6rem); }
 }
 .btn--accent:hover { transform: translateY(-1px); }
 
-/* Pequeño cuadrado naranja decorativo */
 .badge {
   width: 18px; height: 18px;
   background: var(--accent);
   border-radius: 3px;
 }
 
-/* ========= Sección hero =========
-   Imagen de fondo + overlay oscuro + texto grande a la izquierda */
 .hero {
   position: relative;
   color: var(--white);
@@ -108,7 +100,6 @@ h2 { font-size: clamp(1.8rem, 1.2vw + 1.2rem, 2.6rem); }
   margin-bottom: var(--space-2);
 }
 
-/* ========= Bloques alternados (texto + imagen) ========= */
 .section { padding-block: var(--space-6); }
 
 .split {
@@ -116,11 +107,10 @@ h2 { font-size: clamp(1.8rem, 1.2vw + 1.2rem, 2.6rem); }
   gap: var(--space-4);
   align-items: center;
 }
-.split--2 { grid-template-columns: 1.2fr 1fr; } /* texto más ancho */
-.split--reverse { direction: rtl; }             /* invierte orden visual */
-.split--reverse > * { direction: ltr; }         /* repara texto */
+.split--2 { grid-template-columns: 1.2fr 1fr; }
+.split--reverse { direction: rtl; }
+.split--reverse > * { direction: ltr; }
 
-/* Panel claro/oscuro (como tarjetas) */
 .panel {
   background: var(--white);
   border-radius: var(--radius-lg);
@@ -136,7 +126,6 @@ h2 { font-size: clamp(1.8rem, 1.2vw + 1.2rem, 2.6rem); }
   color: var(--white);
 }
 
-/* Imágenes dentro de secciones */
 .media {
   overflow: hidden;
   border-radius: var(--radius-lg);
@@ -146,15 +135,12 @@ h2 { font-size: clamp(1.8rem, 1.2vw + 1.2rem, 2.6rem); }
 }
 .media:hover img { transform: scale(1.03); }
 
-/* Texto auxiliar */
 .muted { color: var(--muted); }
 
-/* ========= Utilidades pequeñas ========= */
 .stack > * + * { margin-top: var(--space-3); }
 .cluster { display: flex; align-items: center; gap: var(--space-2); }
 .flow-sm > * + * { margin-top: .5rem; }
 
-/* ========= Footer minimal ========= */
 .site-footer {
   color: var(--muted);
   padding: var(--space-4) var(--space-2);
@@ -162,7 +148,6 @@ h2 { font-size: clamp(1.8rem, 1.2vw + 1.2rem, 2.6rem); }
   text-align: center;
 }
 
-/* ========= Responsivo ========= */
 @media (max-width: 980px) {
   .hero { min-height: 60vh; }
   .hero__overlay { background: linear-gradient(180deg, var(--panel-80) 0 70%, rgba(17,24,39,.3) 70% 100%); }
