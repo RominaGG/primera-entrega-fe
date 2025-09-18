@@ -1,4 +1,4 @@
-// Función para manejar los clicks en cada sección
+
 function handleClick(section) {
     switch (section) {
         case 'logo':
@@ -26,7 +26,7 @@ function handleClick(section) {
     }
 }
 
-// Modal de perfil
+
 function showProfileModal() {
     const modal = document.getElementById('profileModal');
     if (modal) {
@@ -41,7 +41,7 @@ function closeModal() {
     }
 }
 
-// Modal de película
+
 function showMovieModal(imgSrc, title) {
     document.getElementById('modalMovieImg').src = imgSrc;
     document.getElementById('modalMovieTitle').textContent = title;
@@ -52,9 +52,9 @@ function closeMovieModal() {
     document.getElementById('movieModal').style.display = 'none';
 }
 
-// Efectos adicionales con JavaScript
+
 document.addEventListener('DOMContentLoaded', function () {
-    // Efecto de carga suave
+    
     const elements = document.querySelectorAll('.portfolio-container > *');
     elements.forEach((el, index) => {
         el.style.opacity = '0';
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, index * 200);
     });
 
-    // Cerrar modal de perfil al hacer clic fuera del contenido
+    
     const modal = document.getElementById('profileModal');
     if (modal) {
         const modalContent = modal.querySelector('.modal-content');
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Cerrar modal de película al hacer clic fuera del contenido
+    
     const movieModal = document.getElementById('movieModal');
     if (movieModal) {
         const movieModalContent = movieModal.querySelector('.modal-content');

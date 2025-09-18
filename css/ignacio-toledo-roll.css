@@ -75,7 +75,7 @@ a:hover { text-decoration: underline; }
   backdrop-filter: blur(6px);
 }
 
-/* ====== Líneas doradas tipo wiki ====== */
+
 .hr-gold{
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
@@ -101,7 +101,7 @@ a:hover { text-decoration: underline; }
 .rule::before{ top: -6px; }
 .rule::after{ bottom: -6px; }
 
-/* ====== Topbar / Nav ====== */
+
 .topbar{
   background: #0e1317;
   border-bottom: 1px solid #1e242a;
@@ -122,7 +122,7 @@ a:hover { text-decoration: underline; }
   color: var(--ink);
 }
 
-/* ====== Botones dorados ====== */
+
 .btn{
   display: inline-block;
   padding: .5rem .9rem;
@@ -145,7 +145,7 @@ a:hover { text-decoration: underline; }
 }
 .btn--ghost:hover{ border-color: var(--gold); color: var(--ink); }
 
-/* ====== Tabs/filters ====== */
+
 .tabs{
   display: flex; flex-wrap: wrap; gap: .5rem;
 }
@@ -162,7 +162,7 @@ a:hover { text-decoration: underline; }
   color: #fff;
 }
 
-/* ====== Listado izq tipo índice ====== */
+
 .index{
   list-style: none; padding: 0; margin: 0;
   columns: 2; column-gap: 2rem;
@@ -171,7 +171,7 @@ a:hover { text-decoration: underline; }
 .index a { color: #d8dfe5; }
 .index a:hover { color: #fff; }
 
-/* ====== Galería de sets ====== */
+
 .gallery{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -208,16 +208,16 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 0 0 2px rgba(200,161,91,0.04) inset, var(--shadow);
 }
 
-/* ====== Aside / columnas ====== */
+
 .grid{
   display: grid;
-  grid-template-columns: 260px 1fr 300px;  /* sidebar - contenido - aside */
+  grid-template-columns: 260px 1fr 300px;  
   gap: 1rem;
 }
 .sidebar, .aside{ position: sticky; top: 64px; height: fit-content; }
 .sidebar .panel, .aside .panel{ background: #0f1418; }
 
-/* ====== Tooltips pequeñitos ====== */
+
 [title] { position: relative; }
 [title]:hover::after{
   content: attr(title);
@@ -233,7 +233,7 @@ a:hover { text-decoration: underline; }
   box-shadow: var(--shadow);
 }
 
-/* ====== Responsivo ====== */
+
 @media (max-width: 1200px){
   .grid{ grid-template-columns: 1fr; }
   .sidebar, .aside{ position: static; }
@@ -243,29 +243,29 @@ a:hover { text-decoration: underline; }
 @media (max-width: 640px){
   .gallery{ grid-template-columns: 1fr; }
 }
-/* ===== FIX DUROS PARA LA TARJETA ===== */
 
-/* Centro el contenido en pantalla */
+
+
 body.theme-elden {
   display: grid;
   place-items: center;
   min-height: 100dvh;
 }
 
-/* Contenedor principal de la tarjeta */
+
 .container {
   width: min(100%, 960px);
   padding: 2rem 1rem;
 }
 
-/* Card con ancho controlado */
+
 .card.profile {
   width: min(100%, 760px);
   margin: 0 auto;
   padding: clamp(1.2rem, 2vw, 2rem);
 }
 
-/* Contenedor que controla la secuencia de reveal */
+
 .reveal-sequence > *{
   opacity: 0;
   transform: translateY(10px);
@@ -279,15 +279,15 @@ body.theme-elden {
 .reveal-sequence.is-ready > *:nth-child(4){ animation-delay: .24s; }
 .reveal-sequence.is-ready > *:nth-child(5){ animation-delay: .30s; }
 
-/* Parallax para la foto de perfil */
+
 .profile__photo{ will-change: transform; transition: transform .25s ease-out; }
 .profile__photo.parallax{ transform: translate3d(0,-6px,0) scale(1.02); }
 
-/* Tag hover effect enhanced */
+
 .tags li{ transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s ease, background .2s ease; }
 .tags li:hover{ transform: translateY(-6px) scale(1.03); box-shadow: 0 10px 30px rgba(0,0,0,0.45); background: rgba(200,161,91,0.08); }
 
-/* Header en 2 columnas y foto SIEMPRE chica */
+
 .profile__header{
   display: grid;
   grid-template-columns: 120px 1fr;
@@ -296,7 +296,7 @@ body.theme-elden {
   padding-bottom: .35rem;
 }
 
-/* 🔒 La foto NO puede crecer más de 120px y recorta al centro */
+
 .profile__photo{
   width: 120px !important;
   height: 120px !important;
@@ -310,21 +310,19 @@ body.theme-elden {
   transition: transform .35s cubic-bezier(.2,.9,.22,1), box-shadow .35s ease;
 }
 
-/* Si hubiera estilos globales que ponen las imágenes al 100%,
-   los neutralizo SOLO dentro del perfil */
+
 .profile img:not(.profile__photo){
   max-width: 100%;
   height: auto;
 }
 
-/* Píldoras y listas ya definidas arriba…
-   Ajusto grid de 2 columnas en desktop */
+
 .grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
-/* ====== Animación de despliegue ====== */
+
 .profile__content {
   max-height: 0;
   overflow: hidden;
@@ -333,12 +331,12 @@ body.theme-elden {
 }
 
 .profile__content.is-open {
-  max-height: 1200px; /* valor suficientemente alto para expandir */
+  max-height: 1200px; 
   opacity: 1;
 }
 
 .profile__header {
-  cursor: pointer; /* muestra que se puede clickear */
+  cursor: pointer; 
 }
 
 .profile__header:hover .profile__photo{
@@ -355,7 +353,7 @@ body.theme-elden {
 
 .container{ animation: fadeInUp .5s .05s both; }
 
-/* Estilos para el botón Atrás */
+
 .back-btn{
   display: inline-flex;
   align-items: center;
@@ -371,10 +369,10 @@ body.theme-elden {
 .back-btn .arrow{ display:inline-block; transition: transform .28s cubic-bezier(.2,.9,.2,1); }
 .back-btn:hover .arrow{ transform: translateX(-4px) rotate(-6deg); }
 
-/* pequeño pulso dorado al cargar para llamar la atención */
+
 .back-btn.pulse{ animation: glowPulse 2.4s ease-in-out .4s 1; }
 
-/* Responsive */
+
 @media (max-width: 720px){
   .profile__header{ grid-template-columns: 80px 1fr; }
   .profile__photo{ width: 80px !important; height: 80px !important; }

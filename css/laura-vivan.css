@@ -8,10 +8,10 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #f5f5f5;
     padding: 50px 20px 20px 20px;
-    /* top, right, bottom, left */
+    
 }
 
-/* -------------Navegación volver-------------------- */
+
 .nav-menu {
     position: fixed;
     top: 20px;
@@ -28,15 +28,15 @@ body {
     color: #f6f6f6;
     padding: 8px 12px;
     border-radius: 0px;
-    /* transition: transform 0.2s ease, background 0.2s ease; */
+    
     transition: all 0.2s ease;
     display: block;
     white-space: nowrap;
-    /*background-color: #cc0000;*/
+    
     background: linear-gradient(-120deg, #444, #333);
 }
 
-/* Efecto hover */
+
 .nav-menu a:hover {
     background-color: rgba(60, 60, 60, 0.3);
 }
@@ -51,7 +51,7 @@ body {
 }
 
 
-/*----------------- Contenedor principal del portafolio------------ */
+
 .portfolio-container {
 
     max-width: 1200px;
@@ -63,7 +63,7 @@ body {
     align-items: start;
 }
 
-/* -----------------Columna izquierda-------------------- */
+
 .left-column {
     display: flex;
     flex-direction: column;
@@ -71,14 +71,14 @@ body {
     gap: 10px;
 }
 
-/* Elementos decorativos superiores */
+
 .decorative-elements {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Cuadrados decorativos rojos y grises */
+
 .red-square {
     width: 80px;
     height: 80px;
@@ -109,18 +109,18 @@ body {
     width: 150px;
     height: 150px;
     border: 4px solid #333;
-    /* marco negro */
+    
     border-radius: 0;
-    /* cuadrado */
+    
     background-color: #fff;
-    /* fondo blanco */
+    
     background-image: url('../img/cuadrado.jpg');
     background-size: cover;
-    /* la imagen ocupa todo */
+    
     background-position: center;
-    /* centrada */
+    
     background-repeat: no-repeat;
-    /* evita repetición */
+    
     cursor: pointer;
     transition: transform 0.3s ease;
     margin: 20px 0;
@@ -142,7 +142,7 @@ body {
     color: #333;
     letter-spacing: 2px;
     margin-bottom: 18px;
-    /* separa del rol */
+    
 }
 
 .portfolio-role {
@@ -153,11 +153,11 @@ body {
     line-height: 1.4;
 }
 
-/*------------------- Columna central ----------------- */
 
 
 
-/* Sección superior azul (info del proyecto) */
+
+
 .project-info {
     background: linear-gradient(135deg, #87CEEB, #4682B4);
     color: white;
@@ -201,7 +201,7 @@ body {
     margin-bottom: 0;
 }
 
-/* Panel desplegable inspiración */
+
 .inspiracion-panel {
     margin: 0 0 0 0;
     background: #f9f9f9;
@@ -221,7 +221,7 @@ body {
     padding: 32px 0;
 }
 
-/* Imágenes alineadas horizontalmente */
+
 .inspiracion-images {
     display: flex;
     gap: 16px;
@@ -238,7 +238,7 @@ body {
 }
 
 
-/* Sección principal negra - PROYECTOS */
+
 .main-project {
     background: linear-gradient(135deg, #1a1a1a, #000);
     color: white;
@@ -307,16 +307,16 @@ body {
 
 
 
-/*-------------------- Columna derecha---------------------------*/
+
 
 .right-column {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    /* Alinea arriba */
+    
     gap: 16px;
-    /* Espacio entre paneles */
+    
     align-self: start;
     margin-top: 60px;
 }
@@ -338,7 +338,7 @@ body {
 }
 
 
-/* Enlace Bitácora */
+
 .bitacora-link {
     color: #fff;
     background: linear-gradient(135deg, #5072a4, #34507b);
@@ -356,7 +356,7 @@ body {
 }
 
 
-/* Tarjetas de colores e iconos */
+
 .color-cards {
     display: flex;
     gap: 10px;
@@ -438,16 +438,16 @@ body {
 
 .modal-content {
     background: #b5b8bc;
-    /* Cambia el color de fondo */
+    
     border-radius: 5px;
     padding: 40px 32px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
     min-width: 300px;
-    /* Más ancho */
+    
     max-width: 400px;
-    /* Máximo ancho */
+    
     width: 80vw;
-    /* Responsive */
+    
     position: relative;
     margin: 0 auto;
     display: flex;
@@ -465,7 +465,7 @@ body {
     cursor: pointer;
 }
 
-/* Modal para información personal */
+
 
 .info-extra {
     display: none;
@@ -533,7 +533,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Responsive design ------------------- */
+
 @media (max-width: 1200px) {
     .portfolio-container {
         max-width: 1000px;

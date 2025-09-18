@@ -1,4 +1,4 @@
-// Botón subir
+
 
 const btnUp = document.getElementById("btnUp");
 

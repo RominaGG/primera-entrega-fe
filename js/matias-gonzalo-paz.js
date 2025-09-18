@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Efecto suave al cargar la página
+  
   const sections = document.querySelectorAll('.info-section');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(section);
   });
 
-  // Cambio sutil de color en tech items al pasar el mouse
+  
   const techItems = document.querySelectorAll('.tech-item');
   techItems.forEach(item => {
     item.addEventListener('mouseenter', function () {

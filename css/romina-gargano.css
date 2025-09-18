@@ -18,7 +18,7 @@ body.dark-mode .card {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
-/* H2, H3, párrafos y otros textos */
+
 body.dark-mode h1,
 body.dark-mode h2,
 body.dark-mode h3,
@@ -36,7 +36,7 @@ body {
   color: #f1f1f1;
   line-height: 1.6;
 }
-/* Nav*/
+
 header {
   background-color: #1f1f1f;
   padding: 1 rem 2rem;
@@ -50,7 +50,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 0 2rem; /* margen interno */
+  padding: 0 2rem; 
 }
 
 .logo {
@@ -76,7 +76,7 @@ nav {
   color: #ff9800;
 }
 
-/* Hero Section */
+
 #hero {
   display: flex;
   flex-direction: column;
@@ -104,7 +104,7 @@ nav {
   font-size: 1.2rem;
   color: #ccc;
 }
-/* Secciones */
+
 section {
   padding: 4rem 2rem;
   max-width: 1000px;
@@ -117,7 +117,7 @@ h2 {
   color: #ff9800;
 }
 
-/* Seccion Habilidades */
+
 .about {
   padding: 60px 20px;
   background-color:linear-gradient(135deg, #f9f9f9, #e0e0e0);
@@ -147,13 +147,13 @@ h2 {
   object-fit: cover;
   position: relative;
   z-index: 1;
-  /*opacity: 0.9;*/
+  
   border: 4px groove rgba(255, 255, 255, 0.6);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s, opacity 0.3s;
 }
 
-/* circulo de fondo con blureo*/
+
 .foto::before {
   content: "";
   position: absolute;
@@ -186,7 +186,7 @@ h2 {
   margin: 5px 0;
   color: #444;
 }
-/* Habilidades como insignias */
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -207,7 +207,7 @@ h2 {
   transform: scale(1.1);
   background: #de5252;
 }
-/* Cards container */
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -242,7 +242,7 @@ h2 {
   transform: translateY(-5px);
 }
 
-/* overlay */
+
 .overlay {
   position: absolute;
   top: 0;
@@ -268,7 +268,7 @@ h2 {
 .card:hover .overlay {
   opacity: 1;
 }
-/* Contact links */
+
 #contact {
     padding: 3rem 1rem;
     text-align: center;
@@ -291,7 +291,7 @@ h2 {
     transform: scale(1.2);
 }
 
-/* Footer */
+
 footer {
   background: #1f1f1f;
   text-align: center;
@@ -301,7 +301,7 @@ footer {
   color: #bbb;
 }
 
-/* botones flotantes */
+
 
 .btn-flotante {
   position: fixed;
@@ -339,7 +339,7 @@ footer {
 }
 
 #btnDarkMode {
-  bottom: 140px; /* arriba del home y subir */
+  bottom: 140px; 
   right: 20px;
 }
 

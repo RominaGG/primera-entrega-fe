@@ -1,8 +1,8 @@
-// ========= JavaScript para Ivan Luis Leiva Landing Page =========
+
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // ========= Smooth Scrolling para enlaces internos =========
+    
     const internalLinks = document.querySelectorAll('a[href^="#"]');
     
     internalLinks.forEach(link => {
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const headerHeight = 80; // Altura aproximada del header
+                const headerHeight = 80; 
                 const targetPosition = targetElement.offsetTop - headerHeight;
                 
                 window.scrollTo({
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ========= Animaciones al hacer scroll =========
+    
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -38,24 +38,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
 
-    // Observar elementos para animaciones
+    
     const animatedElements = document.querySelectorAll('.skill-card, .project-card, .contact-method, .stat');
     animatedElements.forEach(el => observer.observe(el));
 
-    // ========= Formulario de contacto =========
+    
     const contactForm = document.querySelector('.form');
     
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Obtener datos del formulario
+            
             const formData = new FormData(this);
             const nombre = formData.get('nombre');
             const email = formData.get('email');
             const mensaje = formData.get('mensaje');
             
-            // Validación básica
+            
             if (!nombre || !email || !mensaje) {
                 showNotification('Por favor, completa todos los campos', 'error');
                 return;
@@ -66,21 +66,21 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Simular envío (aquí conectarías con tu backend)
+            
             showNotification('¡Mensaje enviado correctamente! Te contactaré pronto.', 'success');
             this.reset();
         });
     }
 
-    // ========= Validación de email =========
+    
     function isValidEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
 
-    // ========= Sistema de notificaciones =========
+    
     function showNotification(message, type = 'info') {
-        // Crear elemento de notificación
+        
         const notification = document.createElement('div');
         notification.className = `notification notification--${type}`;
         notification.innerHTML = `
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        // Añadir estilos si no existen
+        
         if (!document.querySelector('#notification-styles')) {
             const styles = document.createElement('style');
             styles.id = 'notification-styles';
@@ -141,26 +141,26 @@ document.addEventListener('DOMContentLoaded', function() {
             document.head.appendChild(styles);
         }
         
-        // Añadir al DOM
+        
         document.body.appendChild(notification);
         
-        // Mostrar con animación
+        
         setTimeout(() => notification.classList.add('show'), 100);
         
-        // Auto-remover después de 5 segundos
+        
         setTimeout(() => {
             notification.classList.remove('show');
             setTimeout(() => notification.remove(), 300);
         }, 5000);
         
-        // Botón de cerrar
+        
         notification.querySelector('.notification__close').addEventListener('click', () => {
             notification.classList.remove('show');
             setTimeout(() => notification.remove(), 300);
         });
     }
 
-    // ========= Efecto parallax suave en hero =========
+    
     const hero = document.querySelector('.hero');
     if (hero) {
         window.addEventListener('scroll', function() {
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ========= Contador animado para estadísticas =========
+    
     const stats = document.querySelectorAll('.stat__number');
     
     const animateCounter = (element, target) => {
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 20);
     };
 
-    // Observar estadísticas para animación
+    
     const statsObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     stats.forEach(stat => statsObserver.observe(stat));
 
-    // ========= Efecto de escritura para el título principal =========
+    
     const heroTitle = document.querySelector('.hero h1');
     if (heroTitle) {
         const originalText = heroTitle.textContent;
@@ -214,11 +214,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
         
-        // Iniciar efecto después de un pequeño delay
+        
         setTimeout(typeWriter, 500);
     }
 
-    // ========= Navegación activa basada en scroll =========
+    
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('a[href^="#"]');
     
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ========= Efecto de hover mejorado para tarjetas =========
+    
     const cards = document.querySelectorAll('.skill-card, .project-card');
     
     cards.forEach(card => {
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // ========= Lazy loading para imágenes =========
+    
     const images = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     images.forEach(img => imageObserver.observe(img));
 
-    // ========= Botón de scroll to top =========
+    
     const scrollToTopBtn = document.createElement('button');
     scrollToTopBtn.innerHTML = '↑';
     scrollToTopBtn.className = 'scroll-to-top';
