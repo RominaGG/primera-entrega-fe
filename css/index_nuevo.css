@@ -1,0 +1,394 @@
+/* ========= Variables personalizadas ========= */
+:root {
+    --bg-cream: #fbf6ef;
+    --text-dark: #0f172a;
+    --text-muted: #6b7280;
+    --accent-orange: #246d88;
+    --panel-dark: #111827;
+    --panel-gray: #374151;
+    --white: #ffffff;
+}
+
+/* ========= Base styles ========= */
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    padding: 0px;
+}
+
+/* ========= Portfolio Container ========= */
+.portfolio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+}
+
+
+/* ========= Hero Section ========= */
+.hero-section {
+    height: 30vh; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    padding: 20px 40px; 
+    background: linear-gradient(
+        135deg, 
+        rgba(36, 109, 136, 0.9), 
+        rgba(17, 24, 39, 0.7));
+    color: var(--white); 
+    border-radius: 0px; 
+    overflow: hidden;
+    margin-bottom: 0rem;
+    text-align: center; /* Centrar el texto dentro del hero */
+    box-shadow: inset 0 -5px 15px rgba(0,0,0,0.2); 
+}
+
+
+.hero-section p {
+    font-size: 1.2rem;
+    max-width: 800px; /* Limita el ancho del párrafo para que no se extienda demasiado */
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* ========= Hero Content Styles ========= */
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: white;
+}
+
+.hero-badge {
+    background: var(--accent-orange);
+    color: rgb(11, 11, 14);
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin: 0.1rem 0;
+    box-shadow: 0 4px 15px rgba(36, 109, 136, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    opacity: 0.9;
+    line-height: 1.4;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+/* ========= Team Previews Layout ========= */
+.team-previews {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    box-shadow: 0 20px 50px rgba(15,23,42,0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    background: white;
+    margin-top: -20px;
+}
+/* ========= ESTILO PARA COLUMNA  ========= */
+
+/* Estilo específico para la columna sin bloque blanco */
+.member-preview-minimal {
+    min-height: 200px; /* Igual que las otras */
+    border-right: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.member-preview-minimal .preview-header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, var(--panel-dark), var(--panel-gray));
+    color: white;
+    text-align: center;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.member-preview-minimal .preview-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--accent-orange);
+}
+
+
+.member-preview-minimal:hover {
+    transform: scale(1.02);
+    z-index: 10;
+    box-shadow: 0 25px 60px rgba(15,23,42,0.2);
+}
+
+.member-preview-minimal:hover .preview-header {
+    background: linear-gradient(135deg, #e67e22, #f39c12); /* Naranja cálido */
+}
+
+.member-preview-minimal:hover .preview-avatar {
+    transform: scale(1.1);
+}
+
+
+
+
+/* CONTROLAR LA POSICIÓN DEL BOTÓN */
+.member-preview-minimal .preview-btn {
+    margin-top: 3rem; /* Cambia este valor para subir/bajar el botón */
+}
+
+
+
+/* ========= Preview Avatar ========= */
+.preview-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 3px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preview-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.preview-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.preview-role {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+
+/*Boton ver perfil completo*/
+.preview-btn {
+    background: var(--accent-orange);
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    transition: all 0.2s ease;
+}
+
+.preview-btn:hover {
+    background: #091114;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ========= Boton bitacora ========= */
+.btn-floating-text {
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+    background: var(--accent-orange);
+    color: white;
+    border-radius: 25px;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(36, 109, 136, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.btn-floating-text:hover {
+    background: linear-gradient(135deg, #e67e22, #f39c12); /*  gradiente naranja cálido */
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(36, 109, 136, 0.4);
+}
+
+.btn-floating-text i {
+    font-size: 1.2rem;
+}
+
+/* ========= Footer ========= */
+footer.bg-light {
+    margin-top: 0.5rem; /* Menos espacio arriba */
+    padding: 1rem 0 !important; /* Sobreescribe py-4 de Bootstrap */
+    border-top: 1px solid #dee2e6; 
+}
+
+
+/* ========= Responsive Design ========= */
+@media (max-width: 1200px) {
+    .portfolio-container {
+        max-width: 1000px;
+        padding: 0 20px; /* AGREGAR */
+    }
+    
+    .hero-title { /* CAMBIAR de .main-project */
+        font-size: 2.5rem;
+    }
+    
+    .hero-section {
+        height: 28vh; /* AGREGAR */
+        padding: 15px 30px; /* AGREGAR */
+    }
+
+    .btn-floating-text {
+        bottom: 60px;
+        right: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .main-project {
+        font-size: 36px;
+    }
+    
+    .team-previews {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+   .member-preview-minimal {
+    min-height: 280px;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;   
+    }
+
+    .member-preview-minimal:nth-child(3n) {
+        border-right: none;
+    }
+
+    .member-preview-minimal:last-child {
+        border-bottom: none;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    .portfolio-container {
+        padding: 0 10px;
+        gap: 5px;
+    }
+    
+    body {
+        padding: 5px;
+    }
+    
+    .hero-title {
+        /* Se adapta al 7% del ancho de la pantalla, pero no más grande de 28px */
+        font-size: clamp(20px, 7vw, 35px);
+        text-align: center;
+        margin-bottom: 0.5rem;
+        padding-top: 2rem;
+    }
+    
+    .hero-section {
+        min-height: 30vh; /* Usa min-height para que crezca si el contenido lo necesita */
+        flex-direction: column;
+        justify-content: flex-start;;
+        align-items: center;
+        padding: 15px 10px;
+        border-radius: 0;
+    }
+    
+    /* CAMBIO PRINCIPAL: De grid a flex vertical */
+    .team-previews {
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        margin-top: -5px;
+    }
+    
+    .member-preview-minimal {
+        min-height: 250px; /* Altura fija más pequeña */
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e2e8f0;
+        flex-shrink: 0; /* No se comprimen */
+    }
+    
+    .member-preview-minimal:last-child {
+        border-bottom: none;
+    }
+    
+    .member-preview-minimal .preview-header {
+        padding: 1.5rem 1rem;
+        min-height: auto;
+    }
+    
+    .member-preview-minimal .preview-btn {
+        margin-top: 1.5rem;
+        padding: 0.5rem 0.7rem;
+        font-size: 0.75rem;
+    }
+    
+    .preview-avatar {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .preview-name {
+        font-size: 1rem;
+    }
+    
+    .preview-role {
+        font-size: 0.8rem;
+    }
+    
+    .btn-floating-text {
+        bottom: 15px;
+        right: 15px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    footer.bg-light {
+        margin-top: 0.3rem;
+        padding: 0.8rem 0 !important;
+    }
+}
