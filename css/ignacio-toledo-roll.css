@@ -398,7 +398,6 @@ body.theme-elden {
   .card.profile { padding: 0.8rem; }
 }
 
-/* Additional breakpoints inspired by Ivan's layout */
 @media (max-width: 900px) {
   .card.profile { width: 100%; padding: 1rem; }
   .grid { grid-template-columns: 1fr; }
