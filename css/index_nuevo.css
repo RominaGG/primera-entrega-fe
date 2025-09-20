@@ -439,6 +439,57 @@ body {
     }
     
     .hero-title {
+
+/* Mobile specific adjustments */
+@media (max-width: 600px) {
+    .hero-section {
+        height: auto;
+        padding: 18px 16px;
+        border-radius: 0;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+        padding: 0 8px;
+    }
+
+    .team-previews {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 8px;
+        padding: 12px;
+    }
+
+    .member-preview-minimal {
+        min-height: 180px;
+        padding: 12px;
+    }
+
+    .preview-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .preview-name { font-size: 1rem; }
+    .preview-role { font-size: 0.85rem; }
+
+    .btn-floating-text { bottom: 70px; right: 16px; padding: 0.6rem 0.9rem; }
+}
+
+@media (max-width: 420px) {
+    .team-previews { grid-template-columns: 1fr; }
+    .hero-title { font-size: 1.6rem; }
+    .hero-subtitle { font-size: 0.95rem; }
+    .preview-avatar { width: 84px; height: 84px; }
+    .preview-btn { padding: 0.45rem 0.6rem; font-size: 0.75rem; }
+    .portfolio-container { padding: 0 12px; }
+}
+
         font-size: 2rem;
     }
     
