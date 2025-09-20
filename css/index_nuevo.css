@@ -1,4 +1,3 @@
-/* ========= Variables personalizadas ========= */
 :root {
     --bg-cream: #fbf6ef;
     --text-dark: #0f172a;
@@ -9,16 +8,21 @@
     --white: #ffffff;
 }
 
-/* ========= Base styles ========= */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 body {
     background-color: var(--bg-cream);
     color: var(--text-dark);
     font-family: "Inter", system-ui, -apple-system, sans-serif;
     line-height: 1.6;
-    padding: 0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* ========= Portfolio Container ========= */
 .portfolio-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -27,8 +31,6 @@ body {
     gap: 0px;
 }
 
-
-/* ========= Hero Section ========= */
 .hero-section {
     height: 30vh; 
     display: flex;
@@ -44,19 +46,18 @@ body {
     border-radius: 0px; 
     overflow: hidden;
     margin-bottom: 0rem;
-    text-align: center; /* Centrar el texto dentro del hero */
+    text-align: center;
     box-shadow: inset 0 -5px 15px rgba(0,0,0,0.2); 
+    flex-shrink: 0;
 }
-
 
 .hero-section p {
     font-size: 1.2rem;
-    max-width: 800px; /* Limita el ancho del párrafo para que no se extienda demasiado */
+    max-width: 800px;
     margin-top: 0;
     margin-bottom: 1rem;
 }
 
-/* ========= Hero Content Styles ========= */
 .hero-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
@@ -89,7 +90,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
 }
-/* ========= Team Previews Layout ========= */
+
 .team-previews {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -100,11 +101,13 @@ body {
     background: white;
     margin-top: -20px;
 }
-/* ========= ESTILO PARA COLUMNA  ========= */
 
-/* Estilo específico para la columna sin bloque blanco */
+#team {
+    flex: 1;
+}
+
 .member-preview-minimal {
-    min-height: 200px; /* Igual que las otras */
+    min-height: 200px;
     border-right: 1px solid #e2e8f0;
     transition: all 0.3s ease;
     position: relative;
@@ -136,7 +139,6 @@ body {
     background: var(--accent-orange);
 }
 
-
 .member-preview-minimal:hover {
     transform: scale(1.02);
     z-index: 10;
@@ -144,24 +146,17 @@ body {
 }
 
 .member-preview-minimal:hover .preview-header {
-    background: linear-gradient(135deg, #e67e22, #f39c12); /* Naranja cálido */
+    background: linear-gradient(135deg, #e67e22, #f39c12);
 }
 
 .member-preview-minimal:hover .preview-avatar {
     transform: scale(1.1);
 }
 
-
-
-
-/* CONTROLAR LA POSICIÓN DEL BOTÓN */
 .member-preview-minimal .preview-btn {
-    margin-top: 3rem; /* Cambia este valor para subir/bajar el botón */
+    margin-top: 3rem;
 }
 
-
-
-/* ========= Preview Avatar ========= */
 .preview-avatar {
     width: 130px;
     height: 130px;
@@ -194,8 +189,6 @@ body {
     font-weight: 400;
 }
 
-
-/*Boton ver perfil completo*/
 .preview-btn {
     background: var(--accent-orange);
     color: rgb(255, 255, 255);
@@ -218,7 +211,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* ========= Boton bitacora ========= */
 .btn-floating-text {
     position: fixed;
     bottom: 60px;
@@ -239,7 +231,7 @@ body {
 }
 
 .btn-floating-text:hover {
-    background: linear-gradient(135deg, #e67e22, #f39c12); /*  gradiente naranja cálido */
+    background: linear-gradient(135deg, #e67e22, #f39c12);
     color: white;
     transform: translateY(-2px);
     box-shadow: 0 6px 25px rgba(36, 109, 136, 0.4);
@@ -249,28 +241,145 @@ body {
     font-size: 1.2rem;
 }
 
-/* ========= Footer ========= */
-footer.bg-light {
-    margin-top: 0.5rem; /* Menos espacio arriba */
-    padding: 1rem 0 !important; /* Sobreescribe py-4 de Bootstrap */
-    border-top: 1px solid #dee2e6; 
+.site-footer {
+    background: linear-gradient(135deg, var(--panel-dark) 0%, var(--panel-gray) 100%);
+    color: var(--white);
+    margin-top: 2rem;
+    padding: 3rem 0 1rem;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: 100%;
 }
 
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-orange), #e67e22, var(--accent-orange));
+    animation: shimmer 3s ease-in-out infinite;
+}
 
-/* ========= Responsive Design ========= */
+@keyframes shimmer {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.footer-logo h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-orange);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-logo p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+.footer-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-orange);
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--accent-orange);
+    border-radius: 1px;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-bottom p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.footer-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: linear-gradient(135deg, var(--accent-orange), #e67e22);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(36, 109, 136, 0.3);
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(36, 109, 136, 0.4);
+}
+
 @media (max-width: 1200px) {
     .portfolio-container {
         max-width: 1000px;
-        padding: 0 20px; /* AGREGAR */
+        padding: 0 20px;
     }
     
-    .hero-title { /* CAMBIAR de .main-project */
+    .hero-title {
         font-size: 2.5rem;
     }
     
     .hero-section {
-        height: 28vh; /* AGREGAR */
-        padding: 15px 30px; /* AGREGAR */
+        height: 28vh;
+        padding: 15px 30px;
     }
 
     .btn-floating-text {
@@ -307,6 +416,60 @@ footer.bg-light {
         border-bottom: none;
     }
     
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .footer-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        padding: 0 15px;
+    }
+    
+    .hero-section {
+        height: 26vh;
+        padding: 10px 20px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .team-previews {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .member-preview-minimal {
+        min-height: 300px;
+        border-right: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .member-preview-minimal:nth-child(2n) {
+        border-right: none;
+    }
+    
+    .member-preview-minimal:nth-child(3), .member-preview-minimal:nth-child(4) {
+        border-bottom: none;
+    }
+    
+    .footer-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .btn-floating-text {
+        bottom: 50px;
+        right: 20px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -318,77 +481,84 @@ footer.bg-light {
     body {
         padding: 5px;
     }
-    
     .hero-title {
-        /* Se adapta al 7% del ancho de la pantalla, pero no más grande de 28px */
         font-size: clamp(20px, 7vw, 35px);
         text-align: center;
         margin-bottom: 0.5rem;
         padding-top: 2rem;
     }
-    
     .hero-section {
-        min-height: 30vh; /* Usa min-height para que crezca si el contenido lo necesita */
+        min-height: 30vh;
         flex-direction: column;
-        justify-content: flex-start;;
+        justify-content: flex-start;
         align-items: center;
         padding: 15px 10px;
         border-radius: 0;
     }
-    
-    /* CAMBIO PRINCIPAL: De grid a flex vertical */
     .team-previews {
         display: flex;
         flex-direction: column;
         border-radius: 12px;
         margin-top: -5px;
     }
-    
     .member-preview-minimal {
-        min-height: 250px; /* Altura fija más pequeña */
+        min-height: 250px;
         width: 100%;
         border-right: none;
         border-bottom: 1px solid #e2e8f0;
-        flex-shrink: 0; /* No se comprimen */
+        flex-shrink: 0;
     }
-    
     .member-preview-minimal:last-child {
         border-bottom: none;
     }
-    
     .member-preview-minimal .preview-header {
         padding: 1.5rem 1rem;
         min-height: auto;
     }
-    
     .member-preview-minimal .preview-btn {
         margin-top: 1.5rem;
         padding: 0.5rem 0.7rem;
         font-size: 0.75rem;
     }
-    
     .preview-avatar {
         width: 80px;
         height: 80px;
     }
-    
     .preview-name {
         font-size: 1rem;
     }
-    
     .preview-role {
         font-size: 0.8rem;
     }
-    
     .btn-floating-text {
         bottom: 15px;
         right: 15px;
         padding: 0.6rem 0.8rem;
         font-size: 0.75rem;
     }
-    
-    footer.bg-light {
-        margin-top: 0.3rem;
-        padding: 0.8rem 0 !important;
+    .site-footer {
+        margin-top: 1rem;
+        padding: 2rem 0 1rem;
+    }
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    .footer-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    .footer-badges {
+        justify-content: center;
+    }
+    .badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.6rem;
     }
 }
